@@ -16,7 +16,7 @@ from matplotlib.colors import LogNorm
 def make_figure():
     fig = plt.figure(figsize=(4, 5))
     ax = fig.add_subplot(1, 1, 1)
-    map = Basemap(projection='merc',llcrnrlon=6,llcrnrlat=46,urcrnrlon=18,urcrnrlat=55,resolution='i')
+    map = Basemap(projection='merc',llcrnrlon=6,llcrnrlat=46,urcrnrlon=18,urcrnrlat=55,resolution='i') #insert coordinates of area of interest
 
     # generate a basemap with country borders, oceans and coastlines
     map.drawcoastlines()

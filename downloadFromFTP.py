@@ -1,4 +1,4 @@
-### download files from an ftp server for a range of dates
+### download files from an ftp server for a range of dates including login
 from ftplib import FTP
 import datetime
 from datetime import timedelta

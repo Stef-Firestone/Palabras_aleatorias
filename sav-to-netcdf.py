@@ -1,19 +1,13 @@
 # -*- coding: utf-8 -*-
-"""
-AOT_550_dust.py : save AOD at 550 nm data provided by Jamie Banks in .sav data format as netCDF file 
-"""
 
 __author__       = "Stefanie Feuerstein"
-__organization__ = ["TROPOS Leibniz Institute"]
-__license__      = "GPL ??"
 __version__      = "April 2020"
 __maintainer__   = "S. Feuerstein"
-__email__        = "feuerstein@tropos.de"
 __status__       = "Production"
 
 # STEP 0 - load libraries
 import netCDF4
-from netCDF4 import Dataset  # netcdf4
+from netCDF4 import Dataset  
 import numpy as np           # numerical python
 import numpy.ma as ma        # masked arrays
 import gc                    # Garbage collector to clean memory

@@ -29,7 +29,7 @@ import earthpy.plot as ep
 import io
 from django.http import HttpResponse 
 
-class AutoScrollbar(ttk.Scrollbar):
+class AutoScrollbar(ttk.Scrollbar):  ##scrollbar adapted from: http://effbot.org/zone/tkinter-autoscrollbar.htm
     ''' A scrollbar that hides itself if it's not needed.
         Works only if you use the grid geometry manager '''
     def set(self, lo, hi):
@@ -198,7 +198,6 @@ class Wavy(tk.Frame):
         if bbox[0] < x < bbox[2] and bbox[1] < y < bbox[3]: pass  # Ok! Inside the image
         else: return  # zoom only inside image area
         scale = 1.0
-        # Respond to Linux (event.num) or Windows (event.delta) wheel event
         if event.num == 5 or event.delta == -120:  # scroll down
             i = min(self.width, self.height)
             if int(i * self.imscale) < 30: return  # image is less than 30 pixels
@@ -218,7 +217,6 @@ class Wavy(tk.Frame):
     def openDialog(self):
         self.filedialog = tk.Toplevel(self.master)
         #create widgets
-        #label fields:
         dir_text = Label(self.filedialog, height = 1, width = 30, text = "Image Directory").grid(row=0, column=0, padx=10, pady=10)
         red_text = Label(self.filedialog, height = 1, width = 30, text = "Red Band").grid(row=1, column=0, padx=10, pady=10)
         green_text = Label(self.filedialog, height = 1, width = 30, text = "Green Band").grid(row=2, column=0, padx=10, pady=10)
@@ -248,10 +246,8 @@ class Wavy(tk.Frame):
 
     def OpenImageBand(self):#, band=None):
         user = getpass.getuser()
-    #     #for standard version, uncommend next line
-    #     #file = askopenfilename(initialdir='C:/User/%s' % user)
-        #chose directory and list tif files
-        self.directory = askdirectory(initialdir='C:/python_workspace/WaVy')
+        #for standard version, uncommend next line
+        file = askopenfilename(initialdir='C:/User/%s' % user)
         pathname = StringVar(None)
         pathname.set(self.directory)
         #self.path_name = pathname
